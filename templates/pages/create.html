@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold mb-6">Add a ...</h1>
+    <form action="" method="post" class="border rounded-lg p-8">
+        {% csrf_token %}
+         <div class="mb-4">
+            <label for="{{ form.name.id_for_label }}" class="block text-gray-700 font-medium mb-2">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-4">
+            <label for="{{ form.description.id_for_label }}" class="block text-gray-700 font-medium mb-2">{{ form.description.label }}</label>
+            {{ form.description }}
+        </div>
+        <div class="mb-4">
+            <label for="{{ form.owner.id_for_label }}" class="block text-gray-700 font-medium mb-2">{{ form.owner.label }}</label>
+            {{ form.owner }}
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md py-2 px-4">
+            Save
+        </button>
+    </form>
+
+{% endblock content %}
